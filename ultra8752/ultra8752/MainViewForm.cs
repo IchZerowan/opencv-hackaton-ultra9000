@@ -1,4 +1,5 @@
 ﻿using Emgu.CV;
+using Emgu.CV.Structure;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,16 @@ namespace ultra8752
 {
     public partial class MainViewForm : Form
     {
-        public MainViewForm(string[] args)
+        string[] args;
+        public MainViewForm(string[] args_)
         {
             InitializeComponent();
+            args = args_;
+            Task.Run(run);
+        }
 
+        public async Task run()
+        {
             if (args.Length < 1)
             {
                 Console.Out.WriteLine("No input file provided. Usage: ultra8752 <file>");
