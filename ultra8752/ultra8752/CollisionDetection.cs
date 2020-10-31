@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace ultra8752
 {
@@ -8,28 +9,20 @@ namespace ultra8752
         public static Dictionary<Circle, Circle> CollisionBetweenCircles(List<Circle> circles, int threshhold)
         {
             Dictionary<Circle, Circle> collidedCircles = new Dictionary<Circle, Circle>();
-            foreach (Circle circle in circles)
+            for(int i = 0; i < circles.Count; i++)
             {
-                foreach (Circle currentCircle in circles)
+                for(int j = i + 1; j < circles.Count; j++)
                 {
-                    if (circle.Geometry.Center != currentCircle.Geometry.Center)
+                    PointF c1 = circles[i].Geometry.Center;
+                    PointF c2 = circles[j].Geometry.Center;
+                    float r1 = circles[i].Geometry.Radius;
+                    float r2 = circles[j].Geometry.Radius;
+
+                    double sqDist = Math.Pow(c1.X - c2.X, 2) + Math.Pow(c1.Y - c2.Y, 2);
+                    if (sqDist + threshhold <= Math.Pow(r1 + r2, 2))
                     {
-                        double distantion = 0;
-                        double xVec = 0;
-                        double yVec = 0;
-                        xVec = currentCircle.Geometry.Center.X - circle.Geometry.Center.X;
-                        yVec = currentCircle.Geometry.Center.Y - circle.Geometry.Center.Y;
-                        distantion = Math.Sqrt(Math.Pow(xVec, 2) + Math.Pow(yVec, 2));
-                        if (distantion <= Math.Abs(circle.Geometry.Radius + currentCircle.Geometry.Radius) + threshhold)
-                        {
-                            if ((!collidedCircles.ContainsKey(circle) && !collidedCircles.ContainsValue(currentCircle)) || (!collidedCircles.ContainsKey(currentCircle) && !collidedCircles.ContainsValue(circle)))
-                            {
-                                collidedCircles.Add(circle, currentCircle);
-                            }
-                            
-                        }                    
+                        collidedCircles.Add(circles[i], circles[j]);
                     }
-                    continue;
                 }
             }
             return collidedCircles;
