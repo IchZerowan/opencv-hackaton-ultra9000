@@ -12,7 +12,7 @@ namespace ultra8752
         public static Color DetectColor(Bitmap bitmap, PointF coords)
         {
             int r = 0, g = 0, b = 0;
-            int count = 10;
+            int count = 8;
             for(int i = 0; i < count; i++)
             {
                 Color color = bitmap.GetPixel((int) coords.X + i - count / 2, (int) coords.Y + i - count / 2);
@@ -30,11 +30,9 @@ namespace ultra8752
 
         public static bool CompareColors(Color c1, Color c2, int threshold)
         {
-            int r = Math.Abs(c1.R - c2.R);
-            int g = Math.Abs(c1.G - c2.G);
-            int b = Math.Abs(c1.B - c2.B);
+            float diff = Math.Abs(c1.GetHue() - c2.GetHue());
 
-            return r <= threshold && g <= threshold && b <= threshold;
+            return diff <= threshold;
         }
 
         public static bool IsGray(Color c, float threshold)

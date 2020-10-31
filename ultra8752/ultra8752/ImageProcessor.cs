@@ -65,6 +65,8 @@ namespace ultra8752
 
                     int index = registered.IndexOf(circle);
                     if (index != -1){
+                        circle.IsInfected = registered[index].IsInfected;
+                        circle.IsRed = registered[index].IsRed;
                         registered[index] = circle;
                     } else
                     {
