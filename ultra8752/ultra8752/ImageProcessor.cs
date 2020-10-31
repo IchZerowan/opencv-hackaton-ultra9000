@@ -86,7 +86,7 @@ namespace ultra8752
                     {
                         index = registered.IndexOf(circle);
                     }
-                    CvInvoke.PutText(circleImage, "" + index, point, FontFace.HersheyDuplex, 2,
+                    CvInvoke.PutText(circleImage, "" + (index + 1), point, FontFace.HersheyDuplex, 2,
                         new MCvScalar(255, 255, 255));
                 }
                 #endregion
@@ -122,7 +122,7 @@ namespace ultra8752
             {
                 if (registered[i].IsInfected)
                 {
-                    result.Add("" + i);
+                    result.Add("" + (i + 1));
                 }
             }
 
