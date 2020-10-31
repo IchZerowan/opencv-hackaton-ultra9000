@@ -44,13 +44,6 @@ namespace ultra8752
                     new Rectangle(Point.Empty, new Size(circleImage.Width - 1, circleImage.Height - 1)),
                     new MCvScalar(120, 120, 120));
 
-                for(int i = 0; i < circles.Length; i++)
-                {
-                    CvInvoke.Circle(circleImage, Point.Round(circles[i].Center), (int)circles[i].Radius,
-                        new Bgr(Color.Brown).MCvScalar, 2);
-
-                }
-
                 #endregion
 
 
@@ -71,6 +64,10 @@ namespace ultra8752
                     {
                         registered.Add(circle);
                     }
+
+
+                    CvInvoke.Circle(circleImage, Point.Round(displayed.Center), (int)displayed.Radius,
+                        new Bgr(Color.Brown).MCvScalar, 2);
 
                     Point point = Point.Round(displayed.Center);
                     point.Offset(-20, 20);

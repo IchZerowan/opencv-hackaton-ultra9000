@@ -52,7 +52,7 @@ namespace ultra8752
 
                     Mat processed = ImageProcessor.ProcessImage(frame);
 
-                    pictureBox1.Image = frame.ToBitmap();
+                    pictureBox1.Image = processed.ToBitmap();
                 }
                 else
                 {
