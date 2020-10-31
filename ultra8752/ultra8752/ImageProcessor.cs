@@ -47,7 +47,10 @@ namespace ultra8752
                 #endregion
 
 
+
+
                 #region compare to prev frame circles
+                List<Circle> allDisplayed = new List<Circle>();
                 foreach (CircleF displayed in circles)
                 {
                     Color color = ColorDetector.DetectColor(img.ToBitmap(), displayed.Center);
@@ -57,10 +60,11 @@ namespace ultra8752
                     }
 
                     Circle circle = new Circle(displayed, color);
+                    allDisplayed.Add(circle);
 
                     int index = registered.IndexOf(circle);
                     if (index != -1){
-                        circle = registered[index];
+                        registered[index] = circle;
                     } else
                     {
                         registered.Add(circle);
@@ -68,9 +72,9 @@ namespace ultra8752
                         if (ColorDetector.IsRed(color, 20))
                         {
                             circle.IsRed = true;
+                            circle.IsInfected = true;
                         }
                     }
-
 
                     CvInvoke.Circle(circleImage, Point.Round(displayed.Center), (int)displayed.Radius,
                         new Bgr(Color.Brown).MCvScalar, 2);
@@ -79,6 +83,22 @@ namespace ultra8752
                     point.Offset(-20, 20);
                     CvInvoke.PutText(circleImage, "" + index, point, FontFace.HersheyDuplex, 2,
                         new MCvScalar(255, 255, 255));
+                }
+                #endregion
+
+
+
+                #region detect collisions and infected balls
+                var dict = CollisionDetection.CollisionBetweenCircles(allDisplayed, 2);
+                foreach(var pair in dict)
+                {
+                    if (pair.Key.IsInfected)
+                    {
+                        pair.Value.IsInfected = true;
+                    } else if (pair.Value.IsInfected)
+                    {
+                        pair.Key.IsInfected = true;
+                    }
                 }
                 #endregion
 
