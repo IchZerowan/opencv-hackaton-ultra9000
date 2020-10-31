@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Emgu.CV;
-using Emgu.CV.UI;
-using Emgu.CV.Structure;
-using System.Drawing;
-using Emgu.CV.CvEnum;
-using Emgu.CV.Util;
 
 namespace ultra8752
 {

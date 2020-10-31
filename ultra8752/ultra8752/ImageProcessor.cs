@@ -3,8 +3,6 @@ using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using System.Collections.Generic;
 using System.Drawing;
-using System;
-using System.Runtime.CompilerServices;
 using System.Linq;
 
 namespace ultra8752
@@ -92,7 +90,7 @@ namespace ultra8752
 
 
                 #region detect collisions and infected balls
-                var dict = CollisionDetection.CollisionBetweenCircles(allDisplayed, 2);
+                var dict = CollisionDetection.CollisionBetweenCircles(allDisplayed, 4);
                 foreach(var pair in dict)
                 {
                     if (pair.Key.IsInfected)
