@@ -15,6 +15,7 @@ namespace ultra8752
     public partial class MainViewForm : Form
     {
         string[] args;
+        bool Stopped = false;
         public MainViewForm(string[] args_)
         {
             InitializeComponent();
@@ -41,15 +42,36 @@ namespace ultra8752
             Mat frame;
             for (; ; )
             {
-                frame = videoLoader.nextFrame();
-                if (frame == null)
+                if (!Stopped)
                 {
-                    return;
+                    frame = videoLoader.nextFrame();
+                    if (frame == null)
+                    {
+                        return;
+                    }
+
+                    Mat processed = ImageProcessor.ProcessImage(frame);
+
+                    pictureBox1.Image = frame.ToBitmap();
                 }
+                else
+                {
+                    continue;
+                }
+            }
+        }
 
-                Mat processed = ImageProcessor.ProcessImage(frame);
-
-                pictureBox1.Image = processed.ToBitmap();
+        private void pauseBtn_Click(object sender, EventArgs e)
+        {
+            if (Stopped)
+            {
+                Stopped = false;
+                pauseBtn.Text = "II";
+            }
+            else
+            {
+                Stopped = true;
+                pauseBtn.Text = ">";
             }
         }
     }

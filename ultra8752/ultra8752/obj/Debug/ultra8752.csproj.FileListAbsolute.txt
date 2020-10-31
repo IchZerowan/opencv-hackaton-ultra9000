@@ -32,7 +32,6 @@ I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.csproj.CopyComp
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.exe
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.pdb
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.MainViewForm.resources
-I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.csprojAssemblyReference.cache
 F:\opencv-hackaton-ultra9000\ultra8752\ultra8752\obj\Debug\ultra8752.csprojAssemblyReference.cache
 F:\opencv-hackaton-ultra9000\ultra8752\ultra8752\obj\Debug\ultra8752.MainViewForm.resources
 F:\opencv-hackaton-ultra9000\ultra8752\ultra8752\obj\Debug\ultra8752.Properties.Resources.resources
