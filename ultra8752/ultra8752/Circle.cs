@@ -1,10 +1,5 @@
 ﻿using Emgu.CV.Structure;
-using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ultra8752
 {
@@ -13,10 +8,13 @@ namespace ultra8752
         public Color Color { get; }
         public CircleF Geometry { get; }
 
+        public bool IsRed {get; set;}
+
         public Circle(CircleF geometry, Color color)
         {
             Color = color;
             Geometry = geometry;
+            IsRed = false;
         }
 
         public override bool Equals(object obj)

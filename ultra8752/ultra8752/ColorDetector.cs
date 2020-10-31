@@ -41,5 +41,11 @@ namespace ultra8752
         {
             return c.GetSaturation() <= threshold;
         }
+
+        public static bool IsRed(Color c, float threshold)
+        {
+            float hue = c.GetHue();
+            return hue < threshold / 2 || hue > 360 - threshold / 2;
+        }
     }
 }

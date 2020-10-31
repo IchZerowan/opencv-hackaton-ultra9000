@@ -55,6 +55,7 @@ namespace ultra8752
                     {
                         continue;
                     }
+
                     Circle circle = new Circle(displayed, color);
 
                     int index = registered.IndexOf(circle);
@@ -63,6 +64,11 @@ namespace ultra8752
                     } else
                     {
                         registered.Add(circle);
+
+                        if (ColorDetector.IsRed(color, 20))
+                        {
+                            circle.IsRed = true;
+                        }
                     }
 
 

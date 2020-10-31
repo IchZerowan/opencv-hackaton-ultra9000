@@ -28,13 +28,13 @@ namespace ultra8752
         {
             if (args.Length < 1)
             {
-                Console.Out.WriteLine("No input file provided. Usage: ultra8752 <file>");
+                Console.WriteLine("No input file provided. Usage: ultra8752 <file>");
                 System.Environment.Exit(-1);
             }
 
             if (!System.IO.File.Exists(args[0]))
             {
-                Console.Out.WriteLine("Invalid input file path");
+                Console.WriteLine("Invalid input file path");
                 System.Environment.Exit(-1);
             }
 
