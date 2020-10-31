@@ -1,13 +1,17 @@
 ﻿using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
+using System.Collections.Generic;
 using System.Drawing;
 using System;
+using System.Runtime.CompilerServices;
 
 namespace ultra8752
 {
     static class ImageProcessor
     {
+        private static List<Circle> registered = new List<Circle>();
+
         public static Mat ProcessImage(Mat img)
         {
             using (UMat gray = new UMat())
@@ -45,16 +49,36 @@ namespace ultra8752
                     CvInvoke.Circle(circleImage, Point.Round(circles[i].Center), (int)circles[i].Radius,
                         new Bgr(Color.Brown).MCvScalar, 2);
 
-                    Point point = Point.Round(circles[i].Center);
-                    point.Offset(-20, 20);
-                    CvInvoke.PutText(circleImage, "" + i, point, FontFace.HersheyDuplex, 2,
-                        new MCvScalar(255, 255, 255));
                 }
 
                 #endregion
 
+
+                #region compare to prev frame circles
+                foreach (CircleF displayed in circles)
+                {
+                    Color color = ColorDetector.DetectColor(img.ToBitmap(), displayed.Center);
+                    Circle circle = new Circle(displayed, color);
+
+                    int index = registered.IndexOf(circle);
+                    if (index != -1){
+                        circle = registered[index];
+                    } else
+                    {
+                        registered.Add(circle);
+                    }
+
+                    Point point = Point.Round(displayed.Center);
+                    point.Offset(-20, 20);
+                    CvInvoke.PutText(circleImage, "" + index, point, FontFace.HersheyDuplex, 2,
+                        new MCvScalar(255, 255, 255));
+                }
+                #endregion
+
+
                 Mat result = new Mat();
                 CvInvoke.HConcat(new Mat[] { img, circleImage }, result);
+
                 return result;
             }
         }
