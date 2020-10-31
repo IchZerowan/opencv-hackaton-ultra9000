@@ -25,8 +25,8 @@ namespace ultra8752
                 CvInvoke.GaussianBlur(gray, gray, new Size(3, 3), 1);
 
                 #region circle detection
-                double cannyThreshold = 70;
-                double circleAccumulatorThreshold = 80;
+                double cannyThreshold = 60;
+                double circleAccumulatorThreshold = 90;
                 CircleF[] circles = CvInvoke.HoughCircles(gray, HoughModes.Gradient, 2.0, 30.0, cannyThreshold,
                     circleAccumulatorThreshold, 5);
                 

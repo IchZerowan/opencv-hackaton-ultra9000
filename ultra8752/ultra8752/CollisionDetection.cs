@@ -28,7 +28,11 @@ namespace ultra8752
                         distantion = Math.Sqrt(Math.Pow(xVec, 2) + Math.Pow(yVec, 2));
                         if (distantion <= Math.Abs(circle.Radius + currentCircle.Radius) + threshhold)
                         {
-                            collidedCircles.Add(circle, currentCircle);
+                            if ((!collidedCircles.ContainsKey(circle) && !collidedCircles.ContainsValue(currentCircle)) || (!collidedCircles.ContainsKey(currentCircle) && !collidedCircles.ContainsValue(circle)))
+                            {
+                                collidedCircles.Add(circle, currentCircle);
+                            }
+                            
                         }                    
                     }
                     continue;
