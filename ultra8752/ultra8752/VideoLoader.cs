@@ -9,7 +9,7 @@ namespace ultra8752
     {
         public VideoCapture capture;
 
-        private const bool RESIZE = false;
+        private const bool RESIZE = true;
 
         public VideoLoader(String path)
         {
@@ -26,7 +26,7 @@ namespace ultra8752
 
             if (RESIZE)
             {
-                CvInvoke.Resize(ret, ret, new Size(720, 480), 0, 0, Inter.Linear);
+                CvInvoke.Resize(ret, ret, new Size(480, 853), 0, 0, Inter.Linear);
             }
 
             return ret;
