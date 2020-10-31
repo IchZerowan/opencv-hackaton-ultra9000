@@ -44,7 +44,7 @@ namespace ultra8752
                 #endregion
 
                 Mat result = new Mat();
-                CvInvoke.VConcat(new Mat[] { img, circleImage }, result);
+                CvInvoke.HConcat(new Mat[] { img, circleImage }, result);
                 return result;
             }
         }
