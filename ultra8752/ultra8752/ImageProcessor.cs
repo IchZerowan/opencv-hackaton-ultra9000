@@ -3,8 +3,6 @@ using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using System.Collections.Generic;
 using System.Drawing;
-using System;
-using System.Runtime.CompilerServices;
 using System.Linq;
 
 namespace ultra8752
