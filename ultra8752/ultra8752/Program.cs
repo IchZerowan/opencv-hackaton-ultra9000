@@ -36,6 +36,7 @@ namespace ultra8752
             }
 
             VideoLoader videoLoader = new VideoLoader(args[0]);
+            MainView mainView = new MainView();
             Mat frame;
             for (; ; )
             {
@@ -46,6 +47,8 @@ namespace ultra8752
                 }
 
                 Mat processed = ImageProcessor.ProcessImage(frame);
+
+                mainView.DisplayImage(processed);
 
                 // TODO: display processed
             }
