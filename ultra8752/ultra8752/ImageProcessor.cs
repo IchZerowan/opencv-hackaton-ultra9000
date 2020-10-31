@@ -2,6 +2,7 @@
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using System.Drawing;
+using System;
 
 namespace ultra8752
 {
@@ -26,6 +27,8 @@ namespace ultra8752
                 double circleAccumulatorThreshold = 120;
                 CircleF[] circles = CvInvoke.HoughCircles(gray, HoughModes.Gradient, 2.0, 20.0, cannyThreshold,
                     circleAccumulatorThreshold, 5);
+                
+                
                 #endregion
 
                 #region draw circles
