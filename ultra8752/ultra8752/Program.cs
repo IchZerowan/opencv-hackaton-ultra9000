@@ -10,6 +10,7 @@ using System.Drawing;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Util;
 
+
 namespace ultra8752
 {
     static class Program
@@ -30,9 +31,7 @@ namespace ultra8752
         {
             using (UMat gray = new UMat())
             using (UMat cannyEdges = new UMat())
-           // using (Mat triangleRectangleImage = new Mat(img.Size, DepthType.Cv8U, 3)) //image to draw triangles and rectangles on
             using (Mat circleImage = new Mat(img.Size, DepthType.Cv8U, 3)) //image to draw circles on
-           // using (Mat lineImage = new Mat(img.Size, DepthType.Cv8U, 3)) //image to drtaw lines on
             {
                 //Convert the image to grayscale and filter out the noise
                 CvInvoke.CvtColor(img, gray, ColorConversion.Bgr2Gray);
