@@ -36,5 +36,10 @@ namespace ultra8752
 
             return r <= threshold && g <= threshold && b <= threshold;
         }
+
+        public static bool IsGray(Color c, float threshold)
+        {
+            return c.GetSaturation() <= threshold;
+        }
     }
 }

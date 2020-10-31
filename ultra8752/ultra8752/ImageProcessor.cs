@@ -25,9 +25,9 @@ namespace ultra8752
                 CvInvoke.GaussianBlur(gray, gray, new Size(3, 3), 1);
 
                 #region circle detection
-                double cannyThreshold = 80;
+                double cannyThreshold = 70;
                 double circleAccumulatorThreshold = 80;
-                CircleF[] circles = CvInvoke.HoughCircles(gray, HoughModes.Gradient, 2.0, 20.0, cannyThreshold,
+                CircleF[] circles = CvInvoke.HoughCircles(gray, HoughModes.Gradient, 2.0, 30.0, cannyThreshold,
                     circleAccumulatorThreshold, 5);
                 
                 
@@ -58,6 +58,10 @@ namespace ultra8752
                 foreach (CircleF displayed in circles)
                 {
                     Color color = ColorDetector.DetectColor(img.ToBitmap(), displayed.Center);
+                    if (ColorDetector.IsGray(color, 0.7f))
+                    {
+                        continue;
+                    }
                     Circle circle = new Circle(displayed, color);
 
                     int index = registered.IndexOf(circle);
