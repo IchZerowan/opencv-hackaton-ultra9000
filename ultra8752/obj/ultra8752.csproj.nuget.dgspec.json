@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "F:\\opencv-hackaton-ultra9000\\ultra8752\\ultra8752.csproj": {}
+    "D:\\Chernihiv.IT\\opencv-hackaton-ultra9000.git\\ultra8752\\ultra8752.csproj": {}
   },
   "projects": {
-    "F:\\opencv-hackaton-ultra9000\\ultra8752\\ultra8752.csproj": {
+    "D:\\Chernihiv.IT\\opencv-hackaton-ultra9000.git\\ultra8752\\ultra8752.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\opencv-hackaton-ultra9000\\ultra8752\\ultra8752.csproj",
+        "projectUniqueName": "D:\\Chernihiv.IT\\opencv-hackaton-ultra9000.git\\ultra8752\\ultra8752.csproj",
         "projectName": "ultra8752",
-        "projectPath": "F:\\opencv-hackaton-ultra9000\\ultra8752\\ultra8752.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "F:\\opencv-hackaton-ultra9000\\ultra8752\\obj\\",
+        "projectPath": "D:\\Chernihiv.IT\\opencv-hackaton-ultra9000.git\\ultra8752\\ultra8752.csproj",
+        "packagesPath": "C:\\Users\\ih01\\.nuget\\packages\\",
+        "outputPath": "D:\\Chernihiv.IT\\opencv-hackaton-ultra9000.git\\ultra8752\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "F:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\ih01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -42,7 +41,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Emgu.CV": {
+            "Emgu.CV.UI": {
               "target": "Package",
               "version": "[4.4.0.4099, )"
             },
@@ -66,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

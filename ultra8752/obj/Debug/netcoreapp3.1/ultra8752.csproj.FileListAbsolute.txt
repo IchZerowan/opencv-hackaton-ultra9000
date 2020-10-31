@@ -25,7 +25,6 @@ D:\Chernihiv.IT\opencv-hackaton-ultra9000.git\ultra8752\bin\Debug\netcoreapp3.1\
 D:\Chernihiv.IT\opencv-hackaton-ultra9000.git\ultra8752\bin\Debug\netcoreapp3.1\ultra8752.pdb
 D:\Chernihiv.IT\opencv-hackaton-ultra9000.git\ultra8752\bin\Debug\netcoreapp3.1\Emgu.CV.Platform.NetStandard.dll
 D:\Chernihiv.IT\opencv-hackaton-ultra9000.git\ultra8752\obj\Debug\netcoreapp3.1\ultra8752.csprojAssemblyReference.cache
-D:\Chernihiv.IT\opencv-hackaton-ultra9000.git\ultra8752\obj\Debug\netcoreapp3.1\ultra8752.csproj.CoreCompileInputs.cache
 D:\Chernihiv.IT\opencv-hackaton-ultra9000.git\ultra8752\obj\Debug\netcoreapp3.1\ultra8752.csproj.CopyComplete
 D:\Chernihiv.IT\opencv-hackaton-ultra9000.git\ultra8752\obj\Debug\netcoreapp3.1\ultra8752.dll
 D:\Chernihiv.IT\opencv-hackaton-ultra9000.git\ultra8752\obj\Debug\netcoreapp3.1\ultra8752.pdb

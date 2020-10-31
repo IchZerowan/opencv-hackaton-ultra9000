@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Emgu.CV/4.4.0.4099": {
+      "Emgu.CV/4.4.0.4061": {
         "type": "package",
         "dependencies": {
           "System.Drawing.Primitives": "4.3.0",
@@ -16,6 +16,19 @@
           "lib/netstandard2.0/Emgu.CV.Platform.NetStandard.dll": {}
         }
       },
+      "Emgu.CV.Bitmap/4.4.0.4061": {
+        "type": "package",
+        "dependencies": {
+          "Emgu.CV": "[4.4.0, 4.4.1)",
+          "System.Drawing.Common": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Emgu.CV.Bitmap.dll": {}
+        }
+      },
       "Emgu.CV.runtime.windows/4.4.0.4099": {
         "type": "package",
         "dependencies": {
@@ -25,7 +38,19 @@
           "build/Emgu.CV.runtime.windows.targets": {}
         }
       },
-      "Microsoft.NETCore.Platforms/1.1.1": {
+      "Emgu.CV.UI/4.4.0.4099": {
+        "type": "package",
+        "dependencies": {
+          "Emgu.CV.Bitmap": "[4.4.0, 4.4.1)"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Emgu.CV.Platform.NetCore.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Emgu.CV.Platform.NetCore.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -43,6 +68,24 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.Win32.SystemEvents/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0"
+        },
+        "compile": {
+          "ref/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
       "runtime.native.System/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -54,6 +97,29 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        }
+      },
+      "System.Drawing.Common/4.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.1.0",
+          "Microsoft.Win32.SystemEvents": "4.7.0"
+        },
+        "compile": {
+          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Drawing.Common.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Drawing.Primitives/4.3.0": {
@@ -254,21 +320,36 @@
     }
   },
   "libraries": {
-    "Emgu.CV/4.4.0.4099": {
-      "sha512": "aEZQiPobTIkd5oG2q+qgO/bAsocnplq8jU70e/PqlkBAMfshlwFk6c/IOkoEAtx4PANvdx72fOE0vhe+frLsnA==",
+    "Emgu.CV/4.4.0.4061": {
+      "sha512": "riajI5c2YR1DI9iO9mTq7f4bUV/qUGIiPTNhKCJ5AA38W+4efAL7dNk6e3U/z6o9Hqn+ps54BFl6dBN22VHuQQ==",
       "type": "package",
-      "path": "emgu.cv/4.4.0.4099",
+      "path": "emgu.cv/4.4.0.4061",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
-        "emgu.cv.4.4.0.4099.nupkg.sha512",
+        "emgu.cv.4.4.0.4061.nupkg.sha512",
         "emgu.cv.nuspec",
         "icon.png",
         "lib/netstandard2.0/Emgu.CV.Platform.NetStandard.dll",
         "lib/netstandard2.0/Emgu.CV.Platform.NetStandard.xml",
         "lib/xamarinios10/Emgu.CV.Platform.NetStandard.dll",
         "lib/xamarinios10/Emgu.CV.Platform.NetStandard.xml"
+      ]
+    },
+    "Emgu.CV.Bitmap/4.4.0.4061": {
+      "sha512": "685LZD7Ix6I9Wl2ewVuI+SaITWJAoUY0oOLNYZXo8mf1dRPiIq9XhZHIYDoougZN3qKpHrqKmO2BBJs5xZKxvw==",
+      "type": "package",
+      "path": "emgu.cv.bitmap/4.4.0.4061",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "emgu.cv.bitmap.4.4.0.4061.nupkg.sha512",
+        "emgu.cv.bitmap.nuspec",
+        "icon.png",
+        "lib/netstandard2.0/Emgu.CV.Bitmap.dll",
+        "lib/netstandard2.0/Emgu.CV.Bitmap.xml"
       ]
     },
     "Emgu.CV.runtime.windows/4.4.0.4099": {
@@ -302,19 +383,38 @@
         "icon.png"
       ]
     },
-    "Microsoft.NETCore.Platforms/1.1.1": {
-      "sha512": "TMBuzAHpTenGbGgk0SMTwyEkyijY/Eae4ZGsFNYJvAr/LDn1ku3Etp3FPxChmDp5HHF3kzJuoaa08N0xjqAJfQ==",
+    "Emgu.CV.UI/4.4.0.4099": {
+      "sha512": "L4R4LJsSAd5h+vz8N4GmRvh7EgL8+IDkYLyVH05ZlboJ4K+Xv/uAAxct+4QJWjq20eMj5QnhptHO51Krjr3a2w==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/1.1.1",
+      "path": "emgu.cv.ui/4.4.0.4099",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
+        "LICENSE.txt",
+        "emgu.cv.ui.4.4.0.4099.nupkg.sha512",
+        "emgu.cv.ui.nuspec",
+        "icon.png",
+        "lib/net461/Emgu.CV.Platform.NetFramework.dll",
+        "lib/net461/Emgu.CV.Platform.NetFramework.xml",
+        "lib/netcoreapp3.1/Emgu.CV.Platform.NetCore.dll",
+        "lib/netcoreapp3.1/Emgu.CV.Platform.NetCore.xml"
+      ]
+    },
+    "Microsoft.NETCore.Platforms/3.1.0": {
+      "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
+      "type": "package",
+      "path": "microsoft.netcore.platforms/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.1.1.1.nupkg.sha512",
+        "microsoft.netcore.platforms.3.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
-        "runtime.json"
+        "runtime.json",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "Microsoft.NETCore.Targets/1.1.3": {
@@ -332,6 +432,35 @@
         "runtime.json"
       ]
     },
+    "Microsoft.Win32.SystemEvents/4.7.0": {
+      "sha512": "mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
+      "type": "package",
+      "path": "microsoft.win32.systemevents/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Win32.SystemEvents.dll",
+        "lib/net461/Microsoft.Win32.SystemEvents.xml",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "lib/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
+        "microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+        "microsoft.win32.systemevents.nuspec",
+        "ref/net461/Microsoft.Win32.SystemEvents.dll",
+        "ref/net461/Microsoft.Win32.SystemEvents.xml",
+        "ref/net472/Microsoft.Win32.SystemEvents.dll",
+        "ref/net472/Microsoft.Win32.SystemEvents.xml",
+        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.dll",
+        "ref/netstandard2.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/netcoreapp2.0/Microsoft.Win32.SystemEvents.xml",
+        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll",
+        "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "runtime.native.System/4.3.0": {
       "sha512": "c/qWt2LieNZIj1jGnVNsE2Kl23Ya2aSTBuXMD6V7k9KWr6l16Tqdwq+hJScEpWER9753NWC8h96PaVNY5Ld7Jw==",
       "type": "package",
@@ -343,6 +472,45 @@
         "lib/netstandard1.0/_._",
         "runtime.native.system.4.3.0.nupkg.sha512",
         "runtime.native.system.nuspec"
+      ]
+    },
+    "System.Drawing.Common/4.7.0": {
+      "sha512": "v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
+      "type": "package",
+      "path": "system.drawing.common/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.xml",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "system.drawing.common.4.7.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Drawing.Primitives/4.3.0": {
@@ -1312,30 +1480,29 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Emgu.CV >= 4.4.0.4099",
+      "Emgu.CV.UI >= 4.4.0.4099",
       "Emgu.CV.runtime.windows >= 4.4.0.4099"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {},
-    "F:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\ih01\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\opencv-hackaton-ultra9000\\ultra8752\\ultra8752.csproj",
+      "projectUniqueName": "D:\\Chernihiv.IT\\opencv-hackaton-ultra9000.git\\ultra8752\\ultra8752.csproj",
       "projectName": "ultra8752",
-      "projectPath": "F:\\opencv-hackaton-ultra9000\\ultra8752\\ultra8752.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "F:\\opencv-hackaton-ultra9000\\ultra8752\\obj\\",
+      "projectPath": "D:\\Chernihiv.IT\\opencv-hackaton-ultra9000.git\\ultra8752\\ultra8752.csproj",
+      "packagesPath": "C:\\Users\\ih01\\.nuget\\packages\\",
+      "outputPath": "D:\\Chernihiv.IT\\opencv-hackaton-ultra9000.git\\ultra8752\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "F:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\ih01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -1358,7 +1525,7 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
-          "Emgu.CV": {
+          "Emgu.CV.UI": {
             "target": "Package",
             "version": "[4.4.0.4099, )"
           },
@@ -1382,8 +1549,40 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Emgu.CV.Bitmap 4.4.0.4061 зависит от Emgu.CV (>= 4.4.0 && < 4.4.1), но Emgu.CV 4.4.0 не найден. Использовано наилучшее приближенное соответствие Emgu.CV 4.4.0.4061.",
+      "libraryId": "Emgu.CV",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Emgu.CV.runtime.windows 4.4.0.4099 зависит от Emgu.CV (>= 4.4.0 && < 4.4.1), но Emgu.CV 4.4.0 не найден. Использовано наилучшее приближенное соответствие Emgu.CV 4.4.0.4061.",
+      "libraryId": "Emgu.CV",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Emgu.CV.UI 4.4.0.4099 зависит от Emgu.CV.Bitmap (>= 4.4.0 && < 4.4.1), но Emgu.CV.Bitmap 4.4.0 не найден. Использовано наилучшее приближенное соответствие Emgu.CV.Bitmap 4.4.0.4061.",
+      "libraryId": "Emgu.CV.Bitmap",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }
