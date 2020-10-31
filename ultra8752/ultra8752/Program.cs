@@ -19,12 +19,28 @@ namespace ultra8752
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //  Application.Run(new Form1());
-            
+
+            if (args.Length < 1)
+            {
+                Console.Out.WriteLine("No input file provided. Usage: ultra8752 <file>");
+            }
+
+            VideoLoader videoLoader = new VideoLoader(args[0]);
+            Mat frame;
+            for (; ; )
+            {
+                frame = videoLoader.nextFrame();
+                if(frame == null)
+                {
+                    return;
+                }
+
+                // TODO: process frame
+            }
         }
 
         public static Mat ProcessImage(Mat img)
