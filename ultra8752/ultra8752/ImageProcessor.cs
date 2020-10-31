@@ -11,9 +11,7 @@ namespace ultra8752
         {
             using (UMat gray = new UMat())
             using (UMat cannyEdges = new UMat())
-            // using (Mat triangleRectangleImage = new Mat(img.Size, DepthType.Cv8U, 3)) //image to draw triangles and rectangles on
-            using (Mat circleImage = new Mat(img.Size, DepthType.Cv8U, 3)) //image to draw circles on
-                                                                           // using (Mat lineImage = new Mat(img.Size, DepthType.Cv8U, 3)) //image to drtaw lines on
+            using (Mat circleImage = new Mat(img.Size, DepthType.Cv8U, 3))
             {
                 //Convert the image to grayscale and filter out the noise
                 CvInvoke.CvtColor(img, gray, ColorConversion.Bgr2Gray);
@@ -22,8 +20,8 @@ namespace ultra8752
                 CvInvoke.GaussianBlur(gray, gray, new Size(3, 3), 1);
 
                 #region circle detection
-                double cannyThreshold = 180.0;
-                double circleAccumulatorThreshold = 120;
+                double cannyThreshold = 80;
+                double circleAccumulatorThreshold = 80;
                 CircleF[] circles = CvInvoke.HoughCircles(gray, HoughModes.Gradient, 2.0, 20.0, cannyThreshold,
                     circleAccumulatorThreshold, 5);
                 #endregion
@@ -38,9 +36,18 @@ namespace ultra8752
                 CvInvoke.Rectangle(circleImage,
                     new Rectangle(Point.Empty, new Size(circleImage.Width - 1, circleImage.Height - 1)),
                     new MCvScalar(120, 120, 120));
-                //Draw the labels
-                CvInvoke.PutText(circleImage, "Circles", new Point(20, 20), FontFace.HersheyDuplex, 0.5,
-                    new MCvScalar(120, 120, 120));
+
+                for(int i = 0; i < circles.Length; i++)
+                {
+                    CvInvoke.Circle(circleImage, Point.Round(circles[i].Center), (int)circles[i].Radius,
+                        new Bgr(Color.Brown).MCvScalar, 2);
+
+                    Point point = Point.Round(circles[i].Center);
+                    point.Offset(-20, 20);
+                    CvInvoke.PutText(circleImage, "" + i, point, FontFace.HersheyDuplex, 2,
+                        new MCvScalar(255, 255, 255));
+                }
+
                 #endregion
 
                 Mat result = new Mat();

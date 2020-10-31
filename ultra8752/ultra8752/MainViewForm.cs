@@ -20,6 +20,7 @@ namespace ultra8752
             InitializeComponent();
             args = args_;
             Task.Run(run);
+            this.WindowState = FormWindowState.Maximized;
         }
 
         public async Task run()
