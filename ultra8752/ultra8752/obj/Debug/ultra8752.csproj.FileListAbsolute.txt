@@ -25,10 +25,10 @@ I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\bin\Debug\System.Drawing.Common.dll
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\bin\Debug\Emgu.CV.Bitmap.xml
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\bin\Debug\Emgu.CV.Platform.NetFramework.xml
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\bin\Debug\Emgu.CV.Platform.NetStandard.xml
-I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.csprojAssemblyReference.cache
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.Properties.Resources.resources
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.csproj.GenerateResource.cache
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.csproj.CoreCompileInputs.cache
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.csproj.CopyComplete
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.exe
 I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.pdb
+I:\Labs\Olymp\sources_v2\ultra8752\ultra8752\obj\Debug\ultra8752.MainViewForm.resources
