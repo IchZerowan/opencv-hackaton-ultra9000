@@ -76,7 +76,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Circle.cs" />
     <Compile Include="CollisionDetection.cs" />
+    <Compile Include="ColorDetector.cs" />
     <Compile Include="ImageProcessor.cs" />
     <Compile Include="MainView.cs" />
     <Compile Include="MainViewForm.cs">
