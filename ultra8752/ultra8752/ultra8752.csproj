@@ -80,7 +80,6 @@
     <Compile Include="CollisionDetection.cs" />
     <Compile Include="ColorDetector.cs" />
     <Compile Include="ImageProcessor.cs" />
-    <Compile Include="MainView.cs" />
     <Compile Include="MainViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
