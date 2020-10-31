@@ -19,7 +19,7 @@ namespace ultra8752
         public Mat nextFrame()
         {
             Mat ret = new Mat();
-            if (!capture.Read(ret))
+            if (!capture.Read(ret) || ret.IsEmpty)
             {
                 return null;
             }
@@ -28,6 +28,8 @@ namespace ultra8752
             {
                 CvInvoke.Resize(ret, ret, new Size(480, 853), 0, 0, Inter.Linear);
             }
+
+            
 
             return ret;
         }

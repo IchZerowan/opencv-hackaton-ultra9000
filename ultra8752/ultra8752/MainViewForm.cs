@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,7 +48,7 @@ namespace ultra8752
                     frame = videoLoader.nextFrame();
                     if (frame == null)
                     {
-                        return;
+                        break;
                     }
 
                     Mat processed = ImageProcessor.ProcessImage(frame);
@@ -59,6 +60,12 @@ namespace ultra8752
                     continue;
                 }
             }
+
+            File.WriteAllLines("result.txt", new string[]{
+                ImageProcessor.GetBallsCount() + "",
+                ImageProcessor.GetRedBallsCount() + "",
+                string.Join(" ", ImageProcessor.getInfectedBalls())
+            });
         }
 
         private void pauseBtn_Click(object sender, EventArgs e)

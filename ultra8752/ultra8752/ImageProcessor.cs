@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System;
 using System.Runtime.CompilerServices;
+using System.Linq;
 
 namespace ultra8752
 {
@@ -108,6 +109,30 @@ namespace ultra8752
 
                 return result;
             }
+        }
+
+        internal static string[] getInfectedBalls()
+        {
+            List<string> result = new List<string>();
+            for(int i = 0; i < registered.Count; i++)
+            {
+                if (registered[i].IsInfected)
+                {
+                    result.Add("" + i);
+                }
+            }
+
+            return result.ToArray();
+        }
+
+        internal static int GetRedBallsCount()
+        {
+            return registered.Count(ball => ball.IsRed);
+        }
+
+        internal static int GetBallsCount()
+        {
+            return registered.Count;
         }
     }
 }
