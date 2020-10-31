@@ -1,5 +1,6 @@
 ﻿using Emgu.CV;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -33,6 +34,20 @@ namespace ultra8752
             }
 
             VideoLoader videoLoader = new VideoLoader(args[0]);
+            int fourcc = VideoWriter.Fourcc('H', '2', '6', '4');
+
+            Backend[] backends = CvInvoke.WriterBackends;
+            int backend_idx = 0; 
+            foreach (Backend be in backends)
+            {
+                if (be.Name.Equals("MSMF"))
+                {
+                    backend_idx = be.ID;
+                    break;
+                }
+            }
+
+            VideoWriter videoWriter = new VideoWriter("result.mp4", backend_idx, fourcc, 30, new Size(videoLoader.Width, videoLoader.Height), true);
             Mat frame;
             for (; ; )
             {
@@ -46,6 +61,8 @@ namespace ultra8752
 
                     Mat processed = ImageProcessor.ProcessImage(frame);
 
+                    videoWriter.Write(processed);
+
                     pictureBox1.Image = processed.ToBitmap();
                 }
                 else
@@ -53,6 +70,8 @@ namespace ultra8752
                     continue;
                 }
             }
+
+            videoWriter.Dispose();
 
             File.WriteAllLines("result.txt", new string[]{
                 ImageProcessor.GetBallsCount() + "",

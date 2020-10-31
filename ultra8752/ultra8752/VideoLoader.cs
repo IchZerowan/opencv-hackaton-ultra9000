@@ -33,5 +33,8 @@ namespace ultra8752
 
             return ret;
         }
+
+        public int Width { get { return 480; } }
+        public int Height { get { return 853; } }
     }
 }

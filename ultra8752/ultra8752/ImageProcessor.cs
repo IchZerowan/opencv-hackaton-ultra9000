@@ -77,7 +77,7 @@ namespace ultra8752
                         }
                     }
 
-                    CvInvoke.Circle(circleImage, Point.Round(displayed.Center), (int)displayed.Radius,
+                    CvInvoke.Circle(img, Point.Round(displayed.Center), (int)displayed.Radius,
                         new Bgr(Color.Brown).MCvScalar, 2);
 
                     Point point = Point.Round(displayed.Center);
@@ -86,8 +86,8 @@ namespace ultra8752
                     {
                         index = registered.IndexOf(circle);
                     }
-                    CvInvoke.PutText(circleImage, "" + (index + 1), point, FontFace.HersheyDuplex, 2,
-                        new MCvScalar(255, 255, 255));
+                    CvInvoke.PutText(img, "" + (index + 1), point, FontFace.HersheyDuplex, 2,
+                        new MCvScalar(0, 0, 0));
                 }
                 #endregion
 
@@ -107,11 +107,7 @@ namespace ultra8752
                 }
                 #endregion
 
-
-                Mat result = new Mat();
-                CvInvoke.HConcat(new Mat[] { img, circleImage }, result);
-
-                return result;
+                return img;
             }
         }
 
