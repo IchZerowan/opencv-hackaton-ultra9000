@@ -26,7 +26,7 @@ namespace ultra8752
                 #region circle detection
                 double cannyThreshold = 60;
                 double circleAccumulatorThreshold = 90;
-                CircleF[] circles = CvInvoke.HoughCircles(gray, HoughModes.Gradient, 2.0, 30.0, cannyThreshold,
+                CircleF[] circles = CvInvoke.HoughCircles(gray, HoughModes.Gradient, 2.0, 20.0, cannyThreshold,
                     circleAccumulatorThreshold, 5);
                 
                 
@@ -82,6 +82,10 @@ namespace ultra8752
 
                     Point point = Point.Round(displayed.Center);
                     point.Offset(-20, 20);
+                    if(index == -1)
+                    {
+                        index = registered.IndexOf(circle);
+                    }
                     CvInvoke.PutText(circleImage, "" + index, point, FontFace.HersheyDuplex, 2,
                         new MCvScalar(255, 255, 255));
                 }
