@@ -11,27 +11,49 @@ namespace ultra8752
 {
     class MainView
     {
+        public string window_name { get; set; }
+        public string display_text { get; set; }
+        public Mat display_image { get; set; }
+
         public MainView()
         {
-            String win1 = "Test Window"; //The name of the window
+            String win1 = window_name; //The name of the window
             CvInvoke.NamedWindow(win1); //Create the window using the specific name
+        }
+        public void show_image()
+        {
+            Mat img = display_image;
+            if (display_text != null && String.IsNullOrWhiteSpace(display_text))
+                CvInvoke.PutText(
+                   img,
+                   display_text,
+                   new System.Drawing.Point(10, 80),
+                   FontFace.HersheyComplex,
+                   1.0,
+                   new Bgr(0, 255, 0).MCvScalar);
 
-            Mat img = new Mat(200, 400, DepthType.Cv8U, 3); //Create a 3 channel image of 400x200
-            img.SetTo(new Bgr(255, 0, 0).MCvScalar); // set it to Blue color
 
-            //Draw "Hello, world." on the image using the specific font
-            CvInvoke.PutText(
-               img,
-               "Hello, world",
-               new System.Drawing.Point(10, 80),
-               FontFace.HersheyComplex,
-               1.0,
-               new Bgr(0, 255, 0).MCvScalar);
-
-
-            CvInvoke.Imshow(win1, img); //Show the image
+            CvInvoke.Imshow(window_name, img); //Show the image
             CvInvoke.WaitKey(0);  //Wait for the key pressing event
-            CvInvoke.DestroyWindow(win1); //Destroy the window if key is pressed
+            CvInvoke.DestroyWindow(window_name); //Destroy the window if key is pressed
+        }
+
+        public void show_image(Mat image)
+        {
+            Mat img = display_image;
+            if (display_text != null && String.IsNullOrWhiteSpace(display_text))
+                CvInvoke.PutText(
+                   image,
+                   display_text,
+                   new System.Drawing.Point(10, 80),
+                   FontFace.HersheyComplex,
+                   1.0,
+                   new Bgr(0, 255, 0).MCvScalar);
+
+
+            CvInvoke.Imshow(window_name, image); //Show the image
+            CvInvoke.WaitKey(0);  //Wait for the key pressing event
+            CvInvoke.DestroyWindow(window_name); //Destroy the window if key is pressed
         }
     }
 }
