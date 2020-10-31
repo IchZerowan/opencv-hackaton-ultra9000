@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "Emgu.CV/4.4.0.4061": {
+      "Emgu.CV/4.4.0.4099": {
         "type": "package",
         "dependencies": {
           "System.Drawing.Primitives": "4.3.0",
@@ -254,15 +254,15 @@
     }
   },
   "libraries": {
-    "Emgu.CV/4.4.0.4061": {
-      "sha512": "riajI5c2YR1DI9iO9mTq7f4bUV/qUGIiPTNhKCJ5AA38W+4efAL7dNk6e3U/z6o9Hqn+ps54BFl6dBN22VHuQQ==",
+    "Emgu.CV/4.4.0.4099": {
+      "sha512": "aEZQiPobTIkd5oG2q+qgO/bAsocnplq8jU70e/PqlkBAMfshlwFk6c/IOkoEAtx4PANvdx72fOE0vhe+frLsnA==",
       "type": "package",
-      "path": "emgu.cv/4.4.0.4061",
+      "path": "emgu.cv/4.4.0.4099",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
-        "emgu.cv.4.4.0.4061.nupkg.sha512",
+        "emgu.cv.4.4.0.4099.nupkg.sha512",
         "emgu.cv.nuspec",
         "icon.png",
         "lib/netstandard2.0/Emgu.CV.Platform.NetStandard.dll",
@@ -1312,28 +1312,30 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Emgu.CV >= 4.4.0.4099",
       "Emgu.CV.runtime.windows >= 4.4.0.4099"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ih01\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
+    "F:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Chernihiv.IT\\opencv-hackaton-ultra9000.git\\ultra8752\\ultra8752.csproj",
+      "projectUniqueName": "F:\\opencv-hackaton-ultra9000\\ultra8752\\ultra8752.csproj",
       "projectName": "ultra8752",
-      "projectPath": "D:\\Chernihiv.IT\\opencv-hackaton-ultra9000.git\\ultra8752\\ultra8752.csproj",
-      "packagesPath": "C:\\Users\\ih01\\.nuget\\packages\\",
-      "outputPath": "D:\\Chernihiv.IT\\opencv-hackaton-ultra9000.git\\ultra8752\\obj\\",
+      "projectPath": "F:\\opencv-hackaton-ultra9000\\ultra8752\\ultra8752.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "F:\\opencv-hackaton-ultra9000\\ultra8752\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "F:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\ih01\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -1356,6 +1358,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Emgu.CV": {
+            "target": "Package",
+            "version": "[4.4.0.4099, )"
+          },
           "Emgu.CV.runtime.windows": {
             "target": "Package",
             "version": "[4.4.0.4099, )"
@@ -1376,20 +1382,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Emgu.CV.runtime.windows 4.4.0.4099 зависит от Emgu.CV (>= 4.4.0 && < 4.4.1), но Emgu.CV 4.4.0 не найден. Использовано наилучшее приближенное соответствие Emgu.CV 4.4.0.4061.",
-      "libraryId": "Emgu.CV",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  }
 }
