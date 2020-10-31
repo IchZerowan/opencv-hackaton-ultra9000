@@ -12,7 +12,7 @@ namespace ultra8752
         public static Color DetectColor(Bitmap bitmap, PointF coords)
         {
             int r = 0, g = 0, b = 0;
-            int count = 8;
+            int count = 16;
             for(int i = 0; i < count; i++)
             {
                 Color color = bitmap.GetPixel((int) coords.X + i - count / 2, (int) coords.Y + i - count / 2);

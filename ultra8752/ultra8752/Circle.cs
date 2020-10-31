@@ -23,7 +23,7 @@ namespace ultra8752
         public override bool Equals(object obj)
         {
             return obj is Circle circle &&
-                   ColorDetector.CompareColors(Color, ((Circle) obj).Color, 15);
+                   ColorDetector.CompareColors(Color, ((Circle) obj).Color, 40);
         }
     }
 }
